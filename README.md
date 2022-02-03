@@ -12,6 +12,8 @@ Navigate to the Save/Download tab and use the Advanced Download feature to downl
 
 The deliverable that you turn into Canvas will be a URL linking to your GitHub repository. You will be graded based on having all of the following in your GitHub repository:
 
+\tau
+
 * A build script that cleans the raw dataset and prepares it for analysis
 * A script that generates a plot using `ggplot` and saves it in the figures directory
 * A script that generates a summary table using `kableExtra` and saves it in the tables directory
