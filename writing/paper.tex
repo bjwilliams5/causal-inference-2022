@@ -38,45 +38,33 @@
 \begin{document}
 \maketitle
 
-\section{The First Section}
+\section{Introduction}
 
-This is where I talk about basic \LaTeX. Using the \texttt{parskip} package, I can create a new paragraph by using line breaks, which I will do now.
+Race and gender are extremely important and relevant considerations in the context of the criminal legal system today. Evaluation of arrests by race and gender help researchers and policymakers identify systemic disparities in individuals' interactions with the criminal legal system. This paper will examine arrests in the year 2002 and compare them across Black, Hispanic, and Non-Black/Non-Hispanic individuals, as well as across gender. 
 
-I can also make cool equations inline by using parentheses{\textemdash}like this: \(x + 2\){\textemdash}or by using single dollar signs{\textemdash}like this: $x+2$. Parentheses are preferred because the left and right delimiter are distinct.
+Data is available via the National Longitudinal Survey (NLS) provided by the U.S. Bureau of Labor Statistics. The data examined here is from the NLSY97 Data Release, which provides demographic information as well as key labor and life events statistics for a cohort of 8,984 men and women born from 1980 to 1984, with interviews conducted annually until 2011 and every other year since then. The data examined in this report will examine the year 2002, when respodents were between ages 18 and 22. Arrests are tracked by number per month, 
 
-I can make cool equations in a block style by using the \texttt{equation} environment like so:
-\begin{equation*}
-    y = x\beta + \varepsilon
-\end{equation*}
-or by using double dollar signs:
-$$
-    y = x\beta + \varepsilon
-$$
+\section{Analysis}
 
-Again, the \texttt{equation} environment is preferred because the begin and end delimiters are different.
+Figure 1 shows the average number of arrests by male / female and four racial categories over the course of one year. A few patterns immediately emerge. Arrests for Black males far outpace any other racial category. Additionally, arrests for individuals who identify as male are typically much higher than for female-identifying individuals. 
 
-I can also add a bibliography, but this is beyond the scope of our discussion right now. Overleaf has plenty of resources for this on their \href{https://www.overleaf.com/learn}{website}. Another good place to look for LaTeX help is the \href{https://en.wikibooks.org/wiki/LaTeX}{WikiBook} on it.
-
-\newpage
-
-\section{The Second Section}
-
-Wherein we do tables and graphs. To include the graph we made in ggplot, we create the \texttt{figure} environment. The `H' option tells LaTeX to `hold' the position of the figure instead of positioning it somewhere else. I use the \texttt{caption} command to add a caption{\textemdash}although I also put a title on the plot in ggplot so you would typically choose one or the other. I use the \texttt{label} command after the caption to add a label. Then in my paper I can use the \texttt{ref} command and LaTeX knows I am referring to Figure \ref{fig:graph}.
+One curious and perhaps unexepected result here is that for non-Hispanic mixed race individuals, arrests for female respodents were much higher than for males. However, small sample size could explain this deviation as non-Hispanic mixed race males (n=39) and females (n=42) accounted for a small portion of the total 8,621 valid observations. Indeed, one mixed race, non-Hispanic female accounted for all 6 total arrests for the entire demographic subset. 
 
 
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=.85\textwidth]{arrests_by_racegender}
     \end{center}
-    \caption{Mean Number of Arrests in 2002 by Race and Gender (this is the LaTeX caption, not the ggplot title)}
+    \caption{Mean Number of Arrests in 2002 by Race and Gender}
     \label{fig:graph}
 \end{figure}
 
-
-Tables are somewhat easier, since \texttt{kableExtra} and \texttt{stargazer} generate LaTeX code that is ready to just ``copy-paste'' into our document. The \texttt{label} argument in the R code is the label that the table will have in the tex output, if you want to \texttt{ref} it.
+This information is further presented in Table 1, where mean arrests are presented by race and gender. As mentioned, with the exception of the mixed race non-Hispanic category, male arrests are generally an order of magnitude larger than for their same demographic females. Black males had an average of .488 arrests in the year, while Hispanic and non-Black non-Hispanic groups had averages of .158 and .110, respectively. 
 
 \input{../tables/arrests_by_racegender.tex}
 
+Table 2 shows the regression of mean arrests on the racial and gender categorical variables. Similar to the results indicated above, males had an average arrest .194 higher than females, and Black individuals had higher associated average arrests than Hispanic (.159 more average arrests), mixed race non-Hispanic (.174 more) and non-Black non-Hispanic (.189 more), holding all else fixed. 
+ 
 \input{../tables/regress_arrests_by_racegender.tex}
 
 \end{document}
