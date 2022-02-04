@@ -8,11 +8,9 @@ MAKE SURE to read the Codebook tab to understand how your variables are coded!
 
 Navigate to the Save/Download tab and use the Advanced Download feature to download a comma-delimited file (CSV). You may download the RData file instead if you wish, but my example code uses CSV files.
 
-# Grading
+# Deliverables
 
-The deliverable that you turn into Canvas will be a URL linking to your GitHub repository. You will be graded based on having all of the following in your GitHub repository:
-
-\tau
+The following can be found in in this project:
 
 * A build script that cleans the raw dataset and prepares it for analysis
 * A script that generates a plot using `ggplot` and saves it in the figures directory
