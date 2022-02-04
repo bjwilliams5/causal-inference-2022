@@ -1,12 +1,6 @@
 # R Hidden Curriculum Assignment
 
-Your assignment is to replicate this GitHub repository and produce a report that describes patterns in INCARCERATION STATUS by race and gender in the year 2002, using NLSY97 publicly available data. To do this, you will need to create a data extract at the [NLS Investigator](https://www.nlsinfo.org/investigator/pages/search) website that pulls the variables of interest. Here is a screenshot to help you out:
-
-![](https://raw.githubusercontent.com/nateybear/causal-inference-2022/main/writing/rdemo_assets/NLSY97%20Investigator.png)
-
-MAKE SURE to read the Codebook tab to understand how your variables are coded!
-
-Navigate to the Save/Download tab and use the Advanced Download feature to download a comma-delimited file (CSV). You may download the RData file instead if you wish, but my example code uses CSV files.
+A brief introduction to GitHub and the data analysis workflow. A summary of key findings about arrests by race and gender in 2002 is presented.
 
 # Deliverables
 
@@ -16,4 +10,4 @@ The following can be found in in this project:
 * A script that generates a plot using `ggplot` and saves it in the figures directory
 * A script that generates a summary table using `kableExtra` and saves it in the tables directory
 * A script that generates a regression output summary using `stargazer` and saves it in the tables directory
-* A brief report written in LaTeX that summarizes the patterns that you find. Use a formal and descriptive writing style. You will be graded on a genuine attempt at analyzing the results.
+* A brief report written in LaTeX that summarizes the patterns found in the analysis of mean arrests by race and gender. 
