@@ -6,7 +6,7 @@
 read_csv(here("data/NLSY97_raw.csv")) %>%
   
   # refused responses or already incarcerated --> NA
-  # starts_with("E") are the columns that hold number of arrests per month of 2002
+  # starts_with("E") are the columns that hold number of incarcerations per month of 2002
   mutate(across(starts_with("E"), ~case_when(
     .x < 0   ~ NA_real_,
     .x == 99 ~ NA_real_,
@@ -18,8 +18,10 @@ read_csv(here("data/NLSY97_raw.csv")) %>%
   
   # sum across the months using rowwise
   rowwise() %>%
-  mutate(total_arrests = sum(c_across(starts_with("E")), na.rm = TRUE)) %>%
+  mutate(total_incarcerations = sum(c_across(starts_with("E")), na.rm = TRUE)) %>%
   ungroup() %>%
+  
+  mutate(incarcerated = if_else(total_incarcerations > 0, 1, 0)) %>%
 
   # recode the gender variable
   mutate(gender = if_else(R0536300 == 1, "Male", "Female")) %>%
@@ -33,7 +35,7 @@ read_csv(here("data/NLSY97_raw.csv")) %>%
   )) %>%
   
   # finally, select the variables that will be used in the analysis
-  select(race, gender, total_arrests) %>%
+  select(race, gender, incarcerated) %>%
   
   # write to a csv
   write_csv(here("data/NLSY97_clean.csv"))

@@ -2,7 +2,9 @@
 
 model <- 
   read_csv(here("data/NLSY97_clean.csv")) %>%
-  lm(total_arrests ~ race + gender, data = .)
+  mutate(incarcerated = incarcerated*100) %>% 
+  lm(incarcerated ~ race + gender, data = .)
+
 
 # Here we supply our own standard errors b/c we want to 
 # use heteroskedasticity-robust errors.
@@ -17,8 +19,8 @@ stargazer(
   model,
   se = list(se),
   covariate.labels = covariate.labels,
-  dep.var.labels = "Arrests in 2002",
-  out = here("tables/regress_arrests_by_racegender.tex"),
+  dep.var.labels = "Incarcerated in 2002",
+  out = here("tables/regress_incarcerated_by_racegender.tex"),
   title = "Regression Output. Omitted category is Black Females.",
   label = "tab:regression"
 )
